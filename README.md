@@ -73,6 +73,35 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
+
+
+
+# Laravel-Docker plug-and-play
+
+This is a quick plug-and-play setup for your `Laravel-Docker` projects
+
+Comes with:
+- web-app: `Laravel/PHP-7.2`
+- web-server: `Nginx:alpine`
+- database: `Mysql-5.7.22`
+
+## Setup
+- `git clone git@github.com:shsma/laravel-docker.git`
+- `cd laravel-docker-master`
+- `docker-compose up -d`
+- `docker exec app composer install`
+- `cp .env.example .env`
+- `docker-compose exec app php artisan key:generate`
+
+Now that all containers are up, we can add `127.0.0.1 project.local` to our `/etc/hosts` file
+
+Boom! access `project.local` on your favorite browser
+
+
+
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
